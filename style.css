@@ -14,8 +14,8 @@
   --blue-100: #dbeafe; 
   --blue-50:  #eff6ff;
 
-  --brand-blue: #0389cf;
-  --green-600: #0389cf; 
+  --brand-blue: #3C87C9;
+  --green-600: #3C87C9; 
   --green-500: #0284c7;
   --green-100: #e0f2fe;
   --green-50:  #f0f9ff;
@@ -350,15 +350,16 @@ body.inner-page .nav-hamburger span {
 
 .hero-logo {
   width: auto;
-  height: 140px;
-  max-width: 340px;
+  height: clamp(180px, 28vh, 260px);
+  max-width: min(95%, 560px);
   object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
   margin: 0 auto 1.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 0.85rem 1.75rem;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 0.5rem 1.25rem;
   border-radius: var(--radius-xl);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
   transition: transform 0.4s var(--ease);
 }
@@ -627,7 +628,7 @@ body.inner-page .nav-hamburger span {
 .trust-icon.blue { background: var(--blue-50); color: var(--blue-600); }
 .trust-icon.red { background: #fef2f2; color: var(--red-500); }
 .trust-icon.yellow { background: var(--yellow-100); color: var(--yellow-500); }
-.trust-icon.green { background: #e0f2fe; color: #0389cf; }
+.trust-icon.green { background: #e0f2fe; color: #3C87C9; }
 
 .trust-card h3 {
   font-size: 1rem;
@@ -978,15 +979,15 @@ body.inner-page .nav-hamburger span {
 
 .creative-contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
   margin-bottom: 4rem;
 }
 
 .contact-card-creative {
   background: var(--white);
   border-radius: var(--radius-xl);
-  padding: 2.5rem 2rem;
+  padding: 2.25rem 1.5rem;
   border: 1px solid var(--gray-200);
   box-shadow: var(--shadow-md);
   transition: all 0.4s var(--ease);
@@ -1024,6 +1025,36 @@ body.inner-page .nav-hamburger span {
   background: linear-gradient(90deg, #25D366, #128C7E);
 }
 
+.contact-card-creative.mail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ea4335, #ff6b6b);
+}
+
+.contact-card-creative.insta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.contact-card-creative.fb-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #1877f2, #0056b3);
+}
+
 .contact-card-creative.geo-card::before {
   content: '';
   position: absolute;
@@ -1055,9 +1086,54 @@ body.inner-page .nav-hamburger span {
   color: #25D366;
 }
 
+.creative-icon-wrapper.mail {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.creative-icon-wrapper.insta {
+  background: #fdf2f8;
+  color: #e1306c;
+}
+
+.creative-icon-wrapper.fb {
+  background: #eff6ff;
+  color: #1877f2;
+}
+
 .creative-icon-wrapper.geo {
   background: var(--yellow-100);
   color: #d97706;
+}
+
+.btn-email {
+  background: #ea4335;
+  color: #ffffff !important;
+}
+
+.btn-email:hover {
+  background: #d93025;
+  box-shadow: 0 4px 14px rgba(234, 67, 53, 0.4);
+}
+
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff !important;
+}
+
+.btn-instagram:hover {
+  opacity: 0.92;
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.4);
+}
+
+.btn-facebook {
+  background: #1877f2;
+  color: #ffffff !important;
+}
+
+.btn-facebook:hover {
+  background: #166fe5;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.4);
 }
 
 .live-badge-online {
